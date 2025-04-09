@@ -12,7 +12,7 @@ const projects = [
         title: "Quiz App",
         description: `A quiz application inspired by Kahoot. Developed with Fiber, Gorilla Websocket and Nuxt 3. connect with Google OAuth2.0
          Implemented secure authentication via HTTP cookies.`,
-        image: "/assets/project/quiz.png",
+        image: "assets/project/quiz.png",
         githubURL: "https://github.com/PatiphanAK/leauge-of-quiz"
     }
 ]
