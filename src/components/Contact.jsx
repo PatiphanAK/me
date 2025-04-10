@@ -1,15 +1,18 @@
 const contact = [
   {
+    id: 1,
     platform: 'Email',
     icon: 'https://www.svgrepo.com/show/14478/email.svg',
     contact: "pakkahadsri@gmail.com",
   },
   {
+    id: 2,
     platform: 'LinkedIn',
     icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png',
     contact: "https://www.linkedin.com/in/patiphan-akkahadsri-959535271/",
   },
   {
+    id: 3,
     facebook: 'Facebook',
     icon: 'https://cdn-icons-png.freepik.com/256/15707/15707884.png?semt=ais_hybrid',
     contact: "https://www.facebook.com/profile.php?id=100009448836193&locale=th_TH",
@@ -22,7 +25,7 @@ function showContact() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
         {contact.map((item) => (
           <a
-            key={item.platform}
+            key={item.id}
             href={item.contact.startsWith('http') ? item.contact : `mailto:${item.contact}`}
             target={item.contact.startsWith('http') ? "_blank" : null}
             rel="noopener noreferrer"

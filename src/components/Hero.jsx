@@ -1,10 +1,11 @@
 import TypingText from "./TypingText"
 
+
 export default function Hero() {
     return (
         <div className="flex flex-col">
             <div className="hero min-h-[60vh] bg-base-200" style={{
-                backgroundImage: 'url(../assets/background.jpg)',
+                backgroundImage: 'url(/me/assets/background.jpg)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
             }}>
@@ -14,4 +15,4 @@ export default function Hero() {
             </div>
         </div>
     )
-} 
+}
