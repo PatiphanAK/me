@@ -15,7 +15,7 @@ const programmingLanguages = [
         So I have been learning Go for a while by Tour of Go and Coding it from scratch to work with file system.`
     },
     { id: 4, name: 'Bash & Shell Script', 
-        logoUrl: 'https://e7.pngegg.com/pngimages/48/567/png-clipart-bash-shell-script-command-line-interface-z-shell-shell-rectangle-logo-thumbnail.png', 
+        logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Gnu-bash-logo.svg/1200px-Gnu-bash-logo.svg.png', 
         proficiency: 15 ,
         description: "Linux is my main OS. So I was using bash and shell script to automate my work such as basic commands, file manipulation, cornjob,and scripting."
     },
@@ -27,6 +27,13 @@ const programmingLanguages = [
         At school and 42Bangkok, I learned C programming, using unixstd.h and libc to interact with the file system. This helped me understand how file systems and the kernel work at a low level.
         `
     },
+    {
+        id:6, name: "Rust",
+        logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rust_programming_language_black_logo.svg/1200px-Rust_programming_language_black_logo.svg.png",
+        proficiency: 8,
+        description: `After the trend of rewriting system 
+        I start learning rust from scratch because of I interestend on it performane green software engineering  `
+    }
 ];
 
 export default function CoreTool() {
