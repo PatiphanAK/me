@@ -47,6 +47,7 @@ export default function Contact() {
       <div className="text-center">
         <h2 className="text-4xl font-bold">Contact</h2>
         <p className="mt-4">Feel free to reach out to me!</p>
+        <p className="mt-4">That right on my stack I have hand-on vue but this portfolio I using react for learning new thing</p>
         <div className="mt-8">
           {showContact()}
         </div>
