@@ -7,7 +7,7 @@ const framework = [
   { id: 6, name: 'MongoDB', logoUrl: 'https://www.mongodb.com/assets/images/global/leaf.png' },
   { id: 7, name: 'Pytorch', logoUrl: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS3qPNeH7GljKLjwxeeS3uqDHmrdaKgUPjNnCHBi5ggZs6x_TZJFU-FbG9_oCy-E0hH3rPaiGBwTEZw1NUX5C5zHHmfqhnFV37nxdGwRqE' },
   { id: 8, name: 'OpenCV', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/OpenCV_logo_black.svg/1200px-OpenCV_logo_black.svg.png' },
-  { id: 9, name: 'Fiber', logoUrl: 'https://docs.gofiber.io/img/logo.svg' },
+  { id: 9, name: 'Fiber', logoUrl: 'https://avatars.githubusercontent.com/u/59947262?s=160&v=4' },
   { id: 10, name: 'Docker', logoUrl: 'https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png' },
   { id: 11, name: 'RabbitMQ', logoUrl: 'https://www.rabbitmq.com/assets/files/rabbitmq-logo-e91cacd38fcef5219149bc5cfa10b384.svg' },
   { id: 12, name: 'Numpy', logoUrl: 'https://numpy.org/images/logo.svg' },
