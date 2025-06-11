@@ -97,7 +97,8 @@ const toolCategories = [
       { name: 'NumPy', logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg' },
       { name: 'OpenCV', logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg' },
       { name: 'Roboflow', logoUrl: 'https://security.roboflow.com/api/share/d560a04b-1859-4677-a8a3-e0a72dc70231/logo.png' },
-      { name: 'Pillow', logoUrl: 'https://raw.githubusercontent.com/python-pillow/pillow-logo/main/pillow-logo-dark-text-1280x640.png' }
+      { name: 'Pillow', logoUrl: 'https://raw.githubusercontent.com/python-pillow/pillow-logo/main/pillow-logo-dark-text-1280x640.png' },
+      { name: 'Matplotlib',logoUrl:'https://miro.medium.com/v2/resize:fit:1200/1*Kzb1TcQsx4F12t-qsU7knA.png'}
     ]
   },
   {

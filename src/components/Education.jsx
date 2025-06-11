@@ -7,6 +7,7 @@ const educationData = [
       year: "2022 - Present",
       details: [
           "Major in Information Technology",
+          "Minor in Software Development"
       ]
   }
 ];
