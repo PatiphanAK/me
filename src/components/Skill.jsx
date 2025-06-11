@@ -1,7 +1,7 @@
 import LogoBlock from "./Block"
 import CoreTool from "./CoreTool"
 
-export default function Framework() {
+export default function Skill() {
     return (
       <>
       <div className="text-center">
@@ -14,4 +14,3 @@ export default function Framework() {
 
     )
   }
-  

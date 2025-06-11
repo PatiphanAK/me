@@ -29,7 +29,7 @@ const paragraphs = [
     `Throughout my time at KMITL, I've developed a strong interest in the mathematical foundations of computer science. I particularly enjoy subjects`,
     `Driven by curiosity, I've explored more advanced topics such as`,
     `I'm also familiar with Unix-based systems like macOS and Linux. 
-    I often work in a dual-boot environment using both Windows and Ubuntu, 
+    I often work in a dual-boot environment using both Windows and Arch Linux, 
     which gives me flexibility across different development ecosystems.`,
     `Not only I enjoy mathematics, but I also have a passion for coding.
     Not only do I enjoy mathematics, but I'm also passionate about coding.

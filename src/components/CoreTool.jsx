@@ -80,6 +80,7 @@ export default function CoreTool() {
                             <ProgrammingLanguageCard
                             language={language}
                             index={index}
+                            key={language.id}
                             getProficiencyLevel={getProficiencyLevel}
                             />
                         );
