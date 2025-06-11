@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Database, MessageSquare, Code, Cloud, Container, GitBranch, Cpu, Eye, Settings } from 'lucide-react';
+import { useState } from 'react';
+import { Code, Database, Cloud, MessageSquare, Eye, GitBranch, Container, Settings } from 'lucide-react';
 
 const toolCategories = [
   {
     id: 'database',
     title: 'Database & Cache / In-Memory Store',
     icon: <Database className="w-5 h-5" />,
-    color: 'bg-blue-50 border-blue-200',
+    color: 'bg-blue-50 border-blue-200 dark:bg-blue-900 dark:border-blue-700',
     tools: [
       { name: 'PostgreSQL', logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
       { name: 'MySQL', logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
@@ -19,7 +19,7 @@ const toolCategories = [
     id: 'messaging',
     title: 'Message Broker',
     icon: <MessageSquare className="w-5 h-5" />,
-    color: 'bg-green-50 border-green-200',
+    color: 'bg-green-50 border-green-200 dark:bg-green-900 dark:border-green-700',
     tools: [
       { name: 'RabbitMQ', logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rabbitmq/rabbitmq-original.svg' },
       { name: 'Apache Kafka', logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg' }
@@ -29,7 +29,7 @@ const toolCategories = [
     id: 'backend',
     title: 'Backend & APIs',
     icon: <Code className="w-5 h-5" />,
-    color: 'bg-purple-50 border-purple-200',
+    color: 'bg-purple-50 border-purple-200 dark:bg-purple-900 dark:border-purple-700',
     tools: [
       {
         name: 'REST API',
@@ -75,7 +75,7 @@ const toolCategories = [
     id: 'ide',
     title: 'IDE & Editors',
     icon: <Code className="w-5 h-5" />,
-    color: 'bg-orange-50 border-orange-200',
+    color: 'bg-orange-50 border-orange-200 dark:bg-orange-900 dark:border-orange-700',
     tools: [
       { name: 'VS Code', logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
       { name: 'Neovim', logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/neovim/neovim-original.svg' },
@@ -91,7 +91,7 @@ const toolCategories = [
     id: 'cv',
     title: 'Computer Vision',
     icon: <Eye className="w-5 h-5" />,
-    color: 'bg-red-50 border-red-200',
+    color: 'bg-red-50 border-red-200 dark:bg-red-900 dark:border-red-700',
     tools: [
       { name: 'PyTorch', logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg' },
       { name: 'NumPy', logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg' },
@@ -105,7 +105,7 @@ const toolCategories = [
     id: 'vcs',
     title: 'Version Control',
     icon: <GitBranch className="w-5 h-5" />,
-    color: 'bg-gray-50 border-gray-200',
+    color: 'bg-gray-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600',
     tools: [
       { name: 'Git', logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
       { name: 'GitHub', logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
@@ -116,7 +116,7 @@ const toolCategories = [
     id: 'cloud',
     title: 'Cloud Platforms',
     icon: <Cloud className="w-5 h-5" />,
-    color: 'bg-sky-50 border-sky-200',
+    color: 'bg-sky-50 border-sky-200 dark:bg-sky-900 dark:border-sky-700',
     tools: [
       {
         name: 'AWS',
@@ -140,7 +140,7 @@ const toolCategories = [
     id: 'container',
     title: 'Containerization',
     icon: <Container className="w-5 h-5" />,
-    color: 'bg-cyan-50 border-cyan-200',
+    color: 'bg-cyan-50 border-cyan-200 dark:bg-cyan-900 dark:border-cyan-700',
     tools: [
       { name: 'Containerd', logoUrl: 'https://containerd.io/img/logos/footer-logo.png'},
       { name: 'Docker', logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
@@ -151,7 +151,7 @@ const toolCategories = [
     id: 'cicd',
     title: 'CI/CD & Build Tools',
     icon: <Settings className="w-5 h-5" />,
-    color: 'bg-indigo-50 border-indigo-200',
+    color: 'bg-indigo-50 border-indigo-200 dark:bg-indigo-900 dark:border-indigo-700',
     tools: [
       { name: 'Jenkins', logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg' },
       { name: 'Makefile', logoUrl: 'https://static-00.iconduck.com/assets.00/file-type-makefile-icon-2048x2000-kjmtrypc.png' }
@@ -176,12 +176,12 @@ function ToolCard({ tool, categoryId, index, isHovered, onHover, onLeave, color 
             alt={`${tool.name} logo`}
             className="max-w-full max-h-full object-contain transition-transform group-hover/item:scale-110"
             onError={(e) => {
-              e.target.src = '/api/placeholder/48/48';
+              e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiBmaWxsPSIjZjNmNGY2Ii8+CjxwYXRoIGQ9Ik0yNCAyMFYyOE0yMCAyNEgyOCIgc3Ryb2tlPSIjNmI3MjgwIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4=';
               e.target.alt = tool.name;
             }}
           />
         </div>
-        <span className="text-xs font-medium text-gray-700 leading-tight">{tool.name}</span>
+        <span className="text-xs font-medium text-gray-700 dark:text-gray-300 leading-tight">{tool.name}</span>
       </div>
 
       {isHovered && tool.details && <ToolTooltip tool={tool} />}
@@ -191,10 +191,10 @@ function ToolCard({ tool, categoryId, index, isHovered, onHover, onLeave, color 
 
 function ToolTooltip({ tool }) {
   return (
-    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-10 w-80 bg-white rounded-lg shadow-xl border border-gray-200 p-4 animate-in fade-in zoom-in-95 duration-200">
+    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-10 w-80 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 p-4 animate-in fade-in zoom-in-95 duration-200">
       <div className="text-sm">
-        <h4 className="font-semibold text-gray-900 mb-2">{tool.name}</h4>
-        <p className="text-gray-600 mb-3 text-xs leading-relaxed">{tool.details.description}</p>
+        <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{tool.name}</h4>
+        <p className="text-gray-600 dark:text-gray-300 mb-3 text-xs leading-relaxed">{tool.details.description}</p>
 
         {tool.details.frameworks && (
           <Section title="Frameworks Used:">
@@ -204,20 +204,20 @@ function ToolTooltip({ tool }) {
                 href={framework.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 p-2 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors group/link"
+                className="flex items-center gap-2 p-2 bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors group/link"
               >
                 <img
                   src={framework.logo}
                   alt={framework.name}
                   className="w-5 h-5 object-contain"
                   onError={(e) => {
-                    e.target.src = '/api/placeholder/20/20';
+                    e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjZjNmNGY2Ii8+CjxwYXRoIGQ9Ik0xMCA2VjE0TTYgMTBIMTQiIHN0cm9rZT0iIzZiNzI4MCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+';
                   }}
                 />
-                <span className="text-xs font-medium text-gray-700 group-hover/link:text-blue-600">
+                <span className="text-xs font-medium text-gray-700 dark:text-gray-300 group-hover/link:text-blue-600 dark:group-hover/link:text-blue-400">
                   {framework.name}
                 </span>
-                <svg className="w-3 h-3 text-gray-400 group-hover/link:text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3 h-3 text-gray-400 dark:text-gray-500 group-hover/link:text-blue-600 dark:group-hover/link:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
@@ -234,7 +234,7 @@ function ToolTooltip({ tool }) {
         )}
       </div>
 
-      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white"></div>
+      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white dark:border-t-gray-800"></div>
     </div>
   );
 }
@@ -242,7 +242,7 @@ function ToolTooltip({ tool }) {
 function Section({ title, children }) {
   return (
     <div className="mb-3">
-      <h5 className="font-medium text-gray-800 mb-1 text-xs">{title}</h5>
+      <h5 className="font-medium text-gray-800 dark:text-gray-200 mb-1 text-xs">{title}</h5>
       <div className="space-y-2">{children}</div>
     </div>
   );
@@ -250,17 +250,18 @@ function Section({ title, children }) {
 
 function TagSection({ title, tags, color }) {
   const colorClasses = {
-    blue: 'bg-blue-100 text-blue-800',
-    red: 'bg-red-100 text-red-800',
-    green: 'bg-green-100 text-green-800',
-    yellow: 'bg-yellow-100 text-yellow-800',
-    purple: 'bg-purple-100 text-purple-800',
-    gray: 'bg-gray-100 text-gray-800'
+    blue: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300',
+    red: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300',
+    green: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300',
+    yellow: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300',
+    purple: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300',
+    gray: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300'
   };
   const colorClass = colorClasses[color] || colorClasses.gray;
+  
   return (
     <div className="mb-3">
-      <h5 className="font-medium text-gray-800 mb-1 text-xs">{title}</h5>
+      <h5 className="font-medium text-gray-800 dark:text-gray-200 mb-1 text-xs">{title}</h5>
       <div className="flex flex-wrap gap-1">
         {tags.map((tag, idx) => (
           <span key={idx} className={`px-2 py-1 ${colorClass} rounded text-xs font-medium`}>
@@ -277,10 +278,10 @@ function CategorySection({ category, hoveredTool, onHover, onLeave }) {
     <div key={category.id} className="group">
       <div className="flex items-center gap-3 mb-4">
         <div className={`p-2 rounded-lg ${category.color}`}>{category.icon}</div>
-        <h3 className="text-xl font-semibold text-gray-800 group-hover:text-gray-900 transition-colors">
+        <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors">
           {category.title}
         </h3>
-        <div className="flex-1 h-px bg-gradient-to-r from-gray-200 to-transparent ml-4"></div>
+        <div className="flex-1 h-px bg-gradient-to-r from-gray-200 dark:from-gray-700 to-transparent ml-4"></div>
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
@@ -305,23 +306,28 @@ export default function DevToolsShowcase() {
   const [hoveredTool, setHoveredTool] = useState(null);
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="mb-8 text-center">
-        <p className="text-gray-600 max-w-2xl mx-auto">
-          These are the tools I’m most comfortable with and rely on regularly when building, testing, and shipping applications.
-        </p>
-      </div>
+    <div className="min-h-screen transition-colors duration-300 bg-gray-50 dark:bg-gray-900">
+      <div className="container mx-auto px-4 py-8">
+        <div className="mb-8 text-center">
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+            Development Tools
+          </h1>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            These are the tools I'm most comfortable with and rely on regularly when building, testing, and shipping applications.
+          </p>
+        </div>
 
-      <div className="space-y-8">
-        {toolCategories.map((category) => (
-          <CategorySection
-            key={category.id}
-            category={category}
-            hoveredTool={hoveredTool}
-            onHover={setHoveredTool}
-            onLeave={() => setHoveredTool(null)}
-          />
-        ))}
+        <div className="space-y-8">
+          {toolCategories.map((category) => (
+            <CategorySection
+              key={category.id}
+              category={category}
+              hoveredTool={hoveredTool}
+              onHover={setHoveredTool}
+              onLeave={() => setHoveredTool(null)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
