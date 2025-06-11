@@ -83,7 +83,8 @@ const toolCategories = [
       { name: 'Goland', logoUrl: 'https://dl.flathub.org/media/com/jetbrains/GoLand/7a25094fb5fa7badba596ffc68741397/icons/128x128@2/com.jetbrains.GoLand.png'},
       { name: 'Rustrover', logoUrl: 'https://dl.flathub.org/media/com/jetbrains/RustRover/1ad940a2336d45649b8cc0cc195c988a/icons/128x128@2/com.jetbrains.RustRover.png'},
       { name: 'Jupyter', logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg' },
-      { name: 'Google Colab', logoUrl: 'https://colab.research.google.com/img/colab_favicon_256px.png' }
+      { name: 'Google Colab', logoUrl: 'https://colab.research.google.com/img/colab_favicon_256px.png' },
+      { name: 'Arduino IDE', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg'}
     ]
   },
   {
