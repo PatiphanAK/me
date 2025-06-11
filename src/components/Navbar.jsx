@@ -1,4 +1,4 @@
-const contents = ["home", "about", "framework", "project","contact"]
+const contents = ["home", "about", "skill", "project","contact"]
 
 export default function Navbar() {
   return (

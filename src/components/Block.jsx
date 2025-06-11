@@ -163,9 +163,8 @@ export default function DevToolsShowcase() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8 text-center">
-        <h2 className="text-3xl font-bold text-gray-900 mb-3">Development Environment & Essential Tools</h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          A comprehensive toolkit for modern software development, from databases to deployment
+          These are the tools I’m most comfortable with and rely on regularly when building, testing, and shipping applications.
         </p>
       </div>
 
