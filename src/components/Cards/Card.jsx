@@ -1,6 +1,6 @@
 import { Github } from 'lucide-react';
 
-export default function ProjectCard({ title, description, image, githubURL, tags = [] }) {
+export function ProjectCard({ title, description, image, githubURL, tags = [] }) {
   return (
     <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
       <div className="relative">

@@ -1,6 +1,6 @@
 import { MathematicalAnalysis } from "./Hyperbolic/MathAnalysis"
 import { HyperbolicParaboloid } from "./Hyperbolic/Hyperbolic"
-import { ProfileCard } from "./Card"
+import { ProfileCard } from "./Cards/Card"
 
 const me = {
     image: "assets/me.jpg",

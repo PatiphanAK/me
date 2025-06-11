@@ -5,9 +5,8 @@ export default function Framework() {
     return (
       <>
       <div className="text-center">
-        <h2 className="text-4xl font-bold">My Skills on Tool</h2>
+        <h2 className="text-4xl font-bold">Familiar with diverse development environments and essential tools</h2>
         <LogoBlock />
-        <h2 className="text-4xl font-bold">How I rate my core skills</h2>
         <CoreTool />
       </div>
 

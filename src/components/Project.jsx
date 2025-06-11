@@ -1,4 +1,4 @@
-import ProjectCard from "./Card"
+import {ProjectCard} from "./Cards/Card"
 
 const projects = [
     {
