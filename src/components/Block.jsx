@@ -80,6 +80,8 @@ const toolCategories = [
       { name: 'VS Code', logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
       { name: 'Neovim', logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/neovim/neovim-original.svg' },
       { name: 'PyCharm', logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg' },
+      { name: 'Goland', logoUrl: 'https://dl.flathub.org/media/com/jetbrains/GoLand/7a25094fb5fa7badba596ffc68741397/icons/128x128@2/com.jetbrains.GoLand.png'},
+      { name: 'Rustrover', logoUrl: 'https://dl.flathub.org/media/com/jetbrains/RustRover/1ad940a2336d45649b8cc0cc195c988a/icons/128x128@2/com.jetbrains.RustRover.png'},
       { name: 'Jupyter', logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg' },
       { name: 'Google Colab', logoUrl: 'https://colab.research.google.com/img/colab_favicon_256px.png' }
     ]
