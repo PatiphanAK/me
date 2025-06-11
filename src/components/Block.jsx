@@ -248,14 +248,21 @@ function Section({ title, children }) {
 }
 
 function TagSection({ title, tags, color }) {
-  const bgClass = `bg-blue-100`;
-  const textClass = `text-blue-800`;
+  const colorClasses = {
+    blue: 'bg-blue-100 text-blue-800',
+    red: 'bg-red-100 text-red-800',
+    green: 'bg-green-100 text-green-800',
+    yellow: 'bg-yellow-100 text-yellow-800',
+    purple: 'bg-purple-100 text-purple-800',
+    gray: 'bg-gray-100 text-gray-800'
+  };
+  const colorClass = colorClasses[color] || colorClasses.gray;
   return (
     <div className="mb-3">
       <h5 className="font-medium text-gray-800 mb-1 text-xs">{title}</h5>
       <div className="flex flex-wrap gap-1">
         {tags.map((tag, idx) => (
-          <span key={idx} className={`px-2 py-1 ${bgClass} ${textClass} rounded text-xs font-medium`}>
+          <span key={idx} className={`px-2 py-1 ${colorClass} rounded text-xs font-medium`}>
             {tag}
           </span>
         ))}
