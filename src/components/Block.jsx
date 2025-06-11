@@ -158,6 +158,141 @@ const toolCategories = [
   }
 ];
 
+function ToolCard({ tool, categoryId, index, isHovered, onHover, onLeave, color }) {
+  const toolKey = `${categoryId}-${index}`;
+
+  return (
+    <div
+      key={toolKey}
+      className={`${color} rounded-xl p-4 transition-all duration-300 hover:scale-105 hover:shadow-lg group/item cursor-pointer relative`}
+      onMouseEnter={() => onHover(toolKey)}
+      onMouseLeave={onLeave}
+    >
+      <div className="flex flex-col items-center text-center space-y-2">
+        <div className="w-12 h-12 flex items-center justify-center">
+          <img
+            src={tool.logoUrl}
+            alt={`${tool.name} logo`}
+            className="max-w-full max-h-full object-contain transition-transform group-hover/item:scale-110"
+            onError={(e) => {
+              e.target.src = '/api/placeholder/48/48';
+              e.target.alt = tool.name;
+            }}
+          />
+        </div>
+        <span className="text-xs font-medium text-gray-700 leading-tight">{tool.name}</span>
+      </div>
+
+      {isHovered && tool.details && <ToolTooltip tool={tool} />}
+    </div>
+  );
+}
+
+function ToolTooltip({ tool }) {
+  return (
+    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-10 w-80 bg-white rounded-lg shadow-xl border border-gray-200 p-4 animate-in fade-in zoom-in-95 duration-200">
+      <div className="text-sm">
+        <h4 className="font-semibold text-gray-900 mb-2">{tool.name}</h4>
+        <p className="text-gray-600 mb-3 text-xs leading-relaxed">{tool.details.description}</p>
+
+        {tool.details.frameworks && (
+          <Section title="Frameworks Used:">
+            {tool.details.frameworks.map((framework, idx) => (
+              <a
+                key={idx}
+                href={framework.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 p-2 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors group/link"
+              >
+                <img
+                  src={framework.logo}
+                  alt={framework.name}
+                  className="w-5 h-5 object-contain"
+                  onError={(e) => {
+                    e.target.src = '/api/placeholder/20/20';
+                  }}
+                />
+                <span className="text-xs font-medium text-gray-700 group-hover/link:text-blue-600">
+                  {framework.name}
+                </span>
+                <svg className="w-3 h-3 text-gray-400 group-hover/link:text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            ))}
+          </Section>
+        )}
+
+        {tool.details.services && (
+          <TagSection title="Services Used:" tags={tool.details.services} color="blue" />
+        )}
+
+        {tool.details.features && (
+          <TagSection title="Key Features:" tags={tool.details.features} color="green" />
+        )}
+      </div>
+
+      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white"></div>
+    </div>
+  );
+}
+
+function Section({ title, children }) {
+  return (
+    <div className="mb-3">
+      <h5 className="font-medium text-gray-800 mb-1 text-xs">{title}</h5>
+      <div className="space-y-2">{children}</div>
+    </div>
+  );
+}
+
+function TagSection({ title, tags, color }) {
+  const bgClass = `bg-blue-100`;
+  const textClass = `text-blue-800`;
+  return (
+    <div className="mb-3">
+      <h5 className="font-medium text-gray-800 mb-1 text-xs">{title}</h5>
+      <div className="flex flex-wrap gap-1">
+        {tags.map((tag, idx) => (
+          <span key={idx} className={`px-2 py-1 ${bgClass} ${textClass} rounded text-xs font-medium`}>
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function CategorySection({ category, hoveredTool, onHover, onLeave }) {
+  return (
+    <div key={category.id} className="group">
+      <div className="flex items-center gap-3 mb-4">
+        <div className={`p-2 rounded-lg ${category.color}`}>{category.icon}</div>
+        <h3 className="text-xl font-semibold text-gray-800 group-hover:text-gray-900 transition-colors">
+          {category.title}
+        </h3>
+        <div className="flex-1 h-px bg-gradient-to-r from-gray-200 to-transparent ml-4"></div>
+      </div>
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
+        {category.tools.map((tool, index) => (
+          <ToolCard
+            key={index}
+            tool={tool}
+            categoryId={category.id}
+            index={index}
+            isHovered={hoveredTool === `${category.id}-${index}`}
+            onHover={onHover}
+            onLeave={onLeave}
+            color={category.color}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function DevToolsShowcase() {
   const [hoveredTool, setHoveredTool] = useState(null);
 
@@ -171,124 +306,13 @@ export default function DevToolsShowcase() {
 
       <div className="space-y-8">
         {toolCategories.map((category) => (
-          <div key={category.id} className="group">
-            <div className="flex items-center gap-3 mb-4">
-              <div className={`p-2 rounded-lg ${category.color}`}>
-                {category.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 group-hover:text-gray-900 transition-colors">
-                {category.title}
-              </h3>
-              <div className="flex-1 h-px bg-gradient-to-r from-gray-200 to-transparent ml-4"></div>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
-              {category.tools.map((tool, index) => (
-                <div
-                  key={`${category.id}-${index}`}
-                  className={`${category.color} rounded-xl p-4 transition-all duration-300 hover:scale-105 hover:shadow-lg group/item cursor-pointer relative`}
-                  onMouseEnter={() => setHoveredTool(`${category.id}-${index}`)}
-                  onMouseLeave={() => setHoveredTool(null)}
-                >
-                  <div className="flex flex-col items-center text-center space-y-2">
-                    <div className="w-12 h-12 flex items-center justify-center">
-                      <img
-                        src={tool.logoUrl}
-                        alt={`${tool.name} logo`}
-                        className="max-w-full max-h-full object-contain transition-transform group-hover/item:scale-110"
-                        onError={(e) => {
-                          e.target.src = '/api/placeholder/48/48';
-                          e.target.alt = tool.name;
-                        }}
-                      />
-                    </div>
-                    <span className="text-xs font-medium text-gray-700 leading-tight">
-                      {tool.name}
-                    </span>
-                  </div>
-
-                  {/* Tooltip/Details on hover */}
-                  {hoveredTool === `${category.id}-${index}` && tool.details && (
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-10 w-80 bg-white rounded-lg shadow-xl border border-gray-200 p-4 animate-in fade-in zoom-in-95 duration-200">
-                      <div className="text-sm">
-                        <h4 className="font-semibold text-gray-900 mb-2">{tool.name}</h4>
-                        <p className="text-gray-600 mb-3 text-xs leading-relaxed">{tool.details.description}</p>
-
-                        {/* Frameworks with clickable links */}
-                        {tool.details.frameworks && (
-                          <div className="mb-3">
-                            <h5 className="font-medium text-gray-800 mb-2 text-xs">Frameworks Used:</h5>
-                            <div className="space-y-2">
-                              {tool.details.frameworks.map((framework, idx) => (
-                                <a
-                                  key={idx}
-                                  href={framework.url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="flex items-center gap-2 p-2 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors group/link"
-                                >
-                                  <img
-                                    src={framework.logo}
-                                    alt={framework.name}
-                                    className="w-5 h-5 object-contain"
-                                    onError={(e) => {
-                                      e.target.src = '/api/placeholder/20/20';
-                                    }}
-                                  />
-                                  <span className="text-xs font-medium text-gray-700 group-hover/link:text-blue-600">
-                                    {framework.name}
-                                  </span>
-                                  <svg className="w-3 h-3 text-gray-400 group-hover/link:text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                  </svg>
-                                </a>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-
-                        {/* Services for cloud platforms */}
-                        {tool.details.services && (
-                          <div className="mb-3">
-                            <h5 className="font-medium text-gray-800 mb-1 text-xs">Services Used:</h5>
-                            <div className="flex flex-wrap gap-1">
-                              {tool.details.services.map((service, idx) => (
-                                <span
-                                  key={idx}
-                                  className="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-medium"
-                                >
-                                  {service}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-
-                        {/* Features */}
-                        {tool.details.features && (
-                          <div>
-                            <h5 className="font-medium text-gray-800 mb-1 text-xs">Key Features:</h5>
-                            <div className="flex flex-wrap gap-1">
-                              {tool.details.features.map((feature, idx) => (
-                                <span
-                                  key={idx}
-                                  className="px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-medium"
-                                >
-                                  {feature}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                      {/* Arrow pointing down */}
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white"></div>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
+          <CategorySection
+            key={category.id}
+            category={category}
+            hoveredTool={hoveredTool}
+            onHover={setHoveredTool}
+            onLeave={() => setHoveredTool(null)}
+          />
         ))}
       </div>
     </div>
