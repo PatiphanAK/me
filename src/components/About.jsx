@@ -177,7 +177,7 @@ export default function About() {
                             Verified professional certifications and achievements
                         </p>
                         <a 
-                            href="https://www.credly.com/users/your-username" 
+                            href="https://www.credly.com/users/patiphan-akkahadsri.41c7b44d" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
