@@ -5,6 +5,4 @@ import Project from './Project'
 import Education from './Education'
 import Contact from './Contact'
 
-
-
 export { Hero, About, Skill, Project, Education,Contact }

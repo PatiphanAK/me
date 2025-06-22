@@ -20,7 +20,7 @@ function App() {
             <section 
               id={id} 
               key={id} 
-              className={id === "home" ? "" : "py-16"}
+              className={id === "home" ? "" : "py-8"}
             >
               {component}
             </section>
