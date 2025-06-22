@@ -150,8 +150,9 @@ export default function About() {
     return (
         <div className="px-4 md:px-8 lg:px-16 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 min-h-screen py-12">
             <div className="flex flex-col xl:flex-row xl:gap-8 gap-8 items-start justify-center">
-                {/* Left Column - Profile Card */}
-                <div className="w-full xl:w-[30%] flex justify-center">
+                {/* Left Column - Profile Card + Credly */}
+                <div className="w-full xl:w-[30%] flex flex-col items-center space-y-6">
+                    {/* Profile Card */}
                     <div className="transform hover:scale-105 transition-transform duration-300">
                         <ProfileCard
                             title={me.title}
@@ -159,6 +160,62 @@ export default function About() {
                             image={me.image}
                         />
                     </div>
+                    
+                    {/* Credly Certifications */}
+                    <div className="w-full max-w-sm text-center">
+                        <div className="flex items-center justify-center mb-4">
+                            <img 
+                                src="https://images.credly.com/images/32d4008d-1fa0-4a79-8375-4857b0306dc5/blob.png" 
+                                alt="Credly" 
+                                className="h-16"
+                            />
+                        </div>
+                        <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2">
+                            Digital Credentials
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                            Verified professional certifications and achievements
+                        </p>
+                        <a 
+                            href="https://www.credly.com/users/your-username" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
+                        >
+                            <span>View Badges</span>
+                            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                    </div>
+                    {/* Optional: Skills or Quick Stats */}
+                    {/* <div className="w-full max-w-sm">
+                        <div className="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl p-6 border border-emerald-100 dark:border-emerald-800">
+                            <h4 className="text-sm font-semibold text-emerald-800 dark:text-emerald-200 mb-3 text-center">
+                                🎯 Core Expertise
+                            </h4>
+                            <div className="space-y-2">
+                                <div className="flex items-center justify-between text-sm">
+                                    <span className="text-gray-700 dark:text-gray-300">Machine Learning</span>
+                                    <div className="w-16 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                        <div className="bg-emerald-500 h-2 rounded-full w-[90%]"></div>
+                                    </div>
+                                </div>
+                                <div className="flex items-center justify-between text-sm">
+                                    <span className="text-gray-700 dark:text-gray-300">Data Science</span>
+                                    <div className="w-16 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                        <div className="bg-blue-500 h-2 rounded-full w-[85%]"></div>
+                                    </div>
+                                </div>
+                                <div className="flex items-center justify-between text-sm">
+                                    <span className="text-gray-700 dark:text-gray-300">Mathematics</span>
+                                    <div className="w-16 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                        <div className="bg-purple-500 h-2 rounded-full w-[95%]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> */}
                 </div>
                 
                 {/* Middle Column - About Me Text */}
