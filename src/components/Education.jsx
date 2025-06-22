@@ -20,7 +20,7 @@ function EducationCard({ image, degrees, school, year, gpa, details }) {
 
   return (
       <div 
-          className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-200/50 hover:border-indigo-200/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+          className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 border border-slate-200/50 dark:border-slate-700/50 hover:border-indigo-200/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
       >
@@ -34,14 +34,14 @@ function EducationCard({ image, degrees, school, year, gpa, details }) {
               <div className="flex flex-col lg:flex-row gap-8 items-start">
                   {/* Logo section with enhanced styling */}
                   <div className="relative flex-shrink-0 group/logo">
-                      <div className="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-600 rounded-2xl blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
-                      <div className="relative bg-white p-6 rounded-2xl shadow-lg border border-slate-200/50 group-hover:shadow-xl transition-all duration-500">
-                          <img
+                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-600 rounded-2xl blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
+                        <div className="relative bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg dark:shadow-slate-900 border border-slate-200/50 dark:border-slate-600 group-hover:shadow-xl transition-all duration-500">
+                            <img
                               src={image || "/api/placeholder/200/200"}
                               alt={`${school} logo`}
                               className="w-24 h-24 lg:w-32 lg:h-32 object-contain transform group-hover/logo:scale-105 transition-transform duration-500"
-                          />
-                      </div>
+                            />
+                        </div>
                   </div>
                   
                   {/* Content section */}
@@ -52,7 +52,7 @@ function EducationCard({ image, degrees, school, year, gpa, details }) {
                               <div className="p-2 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg">
                                   <GraduationCap className="w-5 h-5 text-white" />
                               </div>
-                              <h3 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-slate-800 via-indigo-600 to-purple-600 bg-clip-text text-transparent leading-tight">
+                              <h3 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-slate-800 via-indigo-600 to-purple-600 dark:from-white dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent leading-tight">
                                   {degrees}
                               </h3>
                           </div>
@@ -63,7 +63,7 @@ function EducationCard({ image, degrees, school, year, gpa, details }) {
                           <div className="p-2 bg-slate-100 rounded-lg">
                               <Award className="w-4 h-4 text-slate-600" />
                           </div>
-                          <p className="text-lg text-slate-700 font-medium leading-relaxed">
+                          <p className="text-lg text-slate-700 dark:text-slate-300 font-medium leading-relaxed">
                               {school}
                           </p>
                       </div>
@@ -73,7 +73,7 @@ function EducationCard({ image, degrees, school, year, gpa, details }) {
                           <div className="p-2 bg-emerald-100 rounded-lg">
                               <Calendar className="w-4 h-4 text-emerald-600" />
                           </div>
-                          <span className="text-slate-600 font-medium px-4 py-2 bg-slate-100 rounded-full text-sm">
+                          <span className="text-slate-600 dark:text-slate-300 dark:bg-slate-800 font-medium px-4 py-2 bg-slate-100 rounded-full text-sm">
                               {year}
                           </span>
                       </div>
@@ -84,7 +84,7 @@ function EducationCard({ image, degrees, school, year, gpa, details }) {
                               <div className="p-2 bg-amber-100 rounded-lg">
                                   <Award className="w-4 h-4 text-amber-600" />
                               </div>
-                              <span className="text-amber-700 font-bold text-lg">
+                              <span className="text-amber-700 dark:text-amber-400 font-bold text-lg">
                                   GPA {gpa}
                               </span>
                           </div>
@@ -127,18 +127,18 @@ function EducationCard({ image, degrees, school, year, gpa, details }) {
 
 export default function Education() {
   return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/30 py-16 px-4">
+      <div className="py-16 px-4 min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
           {/* Header section with modern styling */}
           <div className="max-w-4xl mx-auto text-center mb-16">
               <div className="inline-flex items-center gap-3 mb-6">
                   <div className="p-3 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl shadow-lg">
                       <GraduationCap className="w-8 h-8 text-white" />
                   </div>
-                  <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-slate-800 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                  <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4">
                       My Education
                   </h2>
               </div>
-              <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
                   Pursuing excellence in technology and innovation through dedicated academic journey
               </p>
           </div>
@@ -170,7 +170,7 @@ export default function Education() {
           <div className="fixed top-20 left-10 w-32 h-32 bg-gradient-to-br from-indigo-400/20 to-purple-600/20 rounded-full blur-3xl pointer-events-none" />
           <div className="fixed bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-pink-400/20 to-indigo-600/20 rounded-full blur-3xl pointer-events-none" />
           
-          <style jsx>{`
+          <style>{`
               @keyframes fadeInUp {
                   from {
                       opacity: 0;

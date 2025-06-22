@@ -58,15 +58,14 @@ const getProficiencyLevel = (proficiency) => {
 
 export default function CoreTool() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-blue-20 
-            dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/50 space-y-8">
+        <div className="min-h-screen transition-colors duration-300 bg-gray-50 dark:bg-gray-900 space-y-8">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12">
                     <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4">
                         Programming Skills
                     </h1>
-                    <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                    <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
                         A showcase of my programming language proficiency and experience
                     </p>
                 </div>
