@@ -31,12 +31,8 @@ const paragraphs = [
     `I'm also familiar with Unix-based systems like macOS and Linux. 
     I often work in a dual-boot environment using both Windows and Arch Linux, 
     which gives me flexibility across different development ecosystems.`,
-    `Not only I enjoy mathematics, but I also have a passion for coding.
-    Not only do I enjoy mathematics, but I'm also passionate about coding.
-I'm actively working on improving my skills by learning fundamental concepts like 
-object-oriented programming (OOP), data structures, algorithms, functional programming, and web development.`,
-    ` love diving into the underlying mechanics of how things work and understanding the reasons behind certain approaches not just how they work, but why we do things a certain way. 
-This deeper understanding helps me not only apply what I learn but also innovate and make informed decisions in my coding journey.`
+    `I believe in architecture as abstraction, not language.
+Hexagonal architecture, OOP, or Functional Programming are mental models that can be expressed in any Turing-complete language — it's not about syntax, it's about system design and reasoning.`
 ]
 
 // Color palette for different topic categories
