@@ -32,7 +32,11 @@ const paragraphs = [
     I often work in a dual-boot environment using both Windows and Arch Linux, 
     which gives me flexibility across different development ecosystems.`,
     `I believe in architecture as abstraction, not language.
-Hexagonal architecture, OOP, or Functional Programming are mental models that can be expressed in any Turing-complete language — it's not about syntax, it's about system design and reasoning.`
+Hexagonal architecture, OOP, or Functional Programming are mental models that can be expressed in any Turing-complete language 
+— it's not about syntax, it's about system design and reasoning.`,
+    `I enjoy exploring the philosophical aspects of mathematics and computer science, 
+    particularly how they relate to logic, reasoning, and the nature of computation. 
+    I believe that understanding these concepts deeply enhances my ability to solve complex problems.`,
 ]
 
 // Color palette for different topic categories
@@ -124,7 +128,7 @@ function AboutMeAdditionalInfo() {
             <div className="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 dark:from-yellow-500/20 dark:to-orange-500/20 p-6 rounded-2xl border border-yellow-200 dark:border-yellow-700">
                 <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center">
-                        <span className="text-2xl">🧠</span>
+                        <span className="text-2xl">📖</span>
                     </div>
                     <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">{paragraphs[5]}</p>
                 </div>
